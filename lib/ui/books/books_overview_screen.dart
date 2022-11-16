@@ -5,8 +5,8 @@ import 'books_grid.dart';
 import '../shared/app_drawer.dart';
 import 'top_right_badge.dart';
 
-import '../../models/book.dart';
-import 'package:flutter/foundation.dart';
+// import '../../models/book.dart';
+// import 'package:flutter/foundation.dart';
 import 'package:provider/provider.dart';
 import '../watch_later/watch_later_manager.dart';
 import '../books/books_manager.dart';
@@ -36,7 +36,7 @@ class _BooksOverviewScreenState extends State<BooksOverviewScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('MyShop'),
+        title: const Text('Review Books'),
         actions: <Widget>[
           buildBookFilterMenu(),
           buildShoppingWatchLaterIcon(),
@@ -63,9 +63,9 @@ class _BooksOverviewScreenState extends State<BooksOverviewScreen> {
 
   Widget buildShoppingWatchLaterIcon() {
     return Consumer<WatchLaterManager>(
-      builder: (ctx, watchlaterManager, child) {
+      builder: (ctx, watchLaterManager, child) {
         return TopRightBadge(
-          data: WatchLaterManager().bookCount,
+          data: watchLaterManager.bookCount,
           child: IconButton(
             icon: const Icon(
               Icons.watch_later,

@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import '../../models/watch_later_item.dart';
 import '../shared/dialog_utils.dart';
 
-import '../../models/book.dart';
-import 'package:flutter/foundation.dart';
+// import '../../models/book.dart';
+// import 'package:flutter/foundation.dart';
 import 'package:provider/provider.dart';
 import '../../ui/watch_later/watch_later_manager.dart';
 
@@ -40,7 +40,7 @@ class WatchLaterItemCard extends StatelessWidget {
       confirmDismiss: (direction) {
         return showConfirmDialog(
           context,
-          'Do you want to remove the item from the WatchLater?',
+          'Do you want to remove the item from the Watch Later?',
         );
       },
       onDismissed: (direction) {
@@ -59,13 +59,19 @@ class WatchLaterItemCard extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(8),
         child: ListTile(
-          leading: CircleAvatar(
-            child: Padding(
-              padding: const EdgeInsets.all(5),
-              child: FittedBox(
-                child: Text('\$${cardItem.imageUrl}'),
-              ),
-            ),
+          // leading: CircleAvatar(
+          //   child: Padding(
+          //     padding: const EdgeInsets.all(5),
+          //     child: FittedBox(
+          //       child: Image.network(
+          //         cardItem.imageUrl,
+          //         fit: BoxFit.cover,
+          //       ),
+          //     ),
+          //   ),
+          // ),
+          leading: Image(
+            image: NetworkImage(cardItem.imageUrl),
           ),
           title: Text(cardItem.title),
           // subtitle: Text('Total: \$${(cardItem.price * cardItem.)}'),

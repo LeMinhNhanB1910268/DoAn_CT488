@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../models/book.dart';
-import '../shared/dialog_utils.dart';
+// import '../shared/dialog_utils.dart';
 
 import 'books_manager.dart';
 
@@ -171,7 +171,7 @@ class _EditBookScreenState extends State<EditBookScreen> {
   TextFormField buildVolumnCountField() {
     return TextFormField(
       initialValue: _editedBook.volumnCount.toString(),
-      decoration: const InputDecoration(labelText: 'volumnCount'),
+      decoration: const InputDecoration(labelText: 'Number of pages'),
       textInputAction: TextInputAction.next,
       keyboardType: TextInputType.number,
       validator: (value) {

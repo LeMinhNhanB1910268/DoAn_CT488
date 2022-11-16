@@ -1,27 +1,27 @@
 class WatchLaterItem {
   final String id;
   final String title;
+  final int quantity;
   final String imageUrl;
-  final double volumnCount;
 
   WatchLaterItem({
     required this.id,
     required this.title,
+    required this.quantity,
     required this.imageUrl,
-    required this.volumnCount,
   });
 
   WatchLaterItem copyWith({
     String? id,
     String? title,
+    int? quantity,
     String? imageUrl,
-    double? volumnCount,
   }) {
     return WatchLaterItem(
       id: id ?? this.id,
       title: title ?? this.title,
+      quantity: quantity ?? this.quantity,
       imageUrl: imageUrl ?? this.imageUrl,
-      volumnCount: volumnCount ?? this.volumnCount,
     );
   }
 }

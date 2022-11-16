@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import '../../models/book.dart';
 import 'book_detail_screen.dart';
 
-import '../../models/book.dart';
-import 'package:flutter/foundation.dart';
+// import '../../models/book.dart';
+// import 'package:flutter/foundation.dart';
 import 'package:provider/provider.dart';
 import '../watch_later/watch_later_manager.dart';
 import '../books/books_manager.dart';
@@ -40,7 +40,7 @@ class BookGridTile extends StatelessWidget {
 
   Widget buildGridFooterBar(BuildContext context) {
     return GridTileBar(
-      backgroundColor: Colors.black87,
+      backgroundColor: Color.fromARGB(221, 148, 147, 147),
       leading: ValueListenableBuilder<bool>(
         valueListenable: book.isFavoriteListenable,
         builder: (ctx, isFavorite, child) {
@@ -62,7 +62,7 @@ class BookGridTile extends StatelessWidget {
       ),
       trailing: IconButton(
         icon: const Icon(
-          Icons.shopping_cart,
+          Icons.watch_later,
         ),
         onPressed: () {
           final cart = context.read<WatchLaterManager>();

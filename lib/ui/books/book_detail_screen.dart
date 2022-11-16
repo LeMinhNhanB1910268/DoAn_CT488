@@ -30,7 +30,7 @@ class BookDetailScreen extends StatelessWidget {
             ),
             const SizedBox(height: 10),
             Text(
-              '\$${book.volumnCount}',
+              'Số trang: ${book.volumnCount}',
               style: const TextStyle(
                 color: Colors.grey,
                 fontSize: 20,

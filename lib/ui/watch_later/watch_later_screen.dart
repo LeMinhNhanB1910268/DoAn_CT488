@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'watch_later_manager.dart';
 import 'item_card.dart';
 
-import '../../models/book.dart';
-import 'package:flutter/foundation.dart';
+// import '../../models/book.dart';
+// import 'package:flutter/foundation.dart';
 import 'package:provider/provider.dart';
-import '../../ui/watch_later/watch_later_manager.dart';
+// import '../../ui/watch_later/watch_later_manager.dart';
 
 class WatchLaterScreen extends StatelessWidget {
   static const routeName = '/watch_later';
@@ -18,7 +18,7 @@ class WatchLaterScreen extends StatelessWidget {
     final watch_later = context.watch<WatchLaterManager>();
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Your WatchLater'),
+        title: const Text('Your Watch Later'),
       ),
       body: Column(
         children: <Widget>[
@@ -45,7 +45,8 @@ class WatchLaterScreen extends StatelessWidget {
     );
   }
 
-  Widget buildWatchLaterSummary(WatchLaterManager watch_later, BuildContext context) {
+  Widget buildWatchLaterSummary(
+      WatchLaterManager watch_later, BuildContext context) {
     return Card(
       margin: const EdgeInsets.all(15),
       child: Padding(
@@ -54,16 +55,16 @@ class WatchLaterScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             const Text(
-              'Total',
+              'Watch Later List:',
               style: TextStyle(fontSize: 20),
             ),
             const Spacer(),
             Chip(
               label: Text(
-                'Total',
+                '${watch_later.bookCount}',
                 style: TextStyle(fontSize: 20),
               ),
-              backgroundColor: Theme.of(context).primaryColor,
+              backgroundColor: Theme.of(context).canvasColor,
             ),
             // TextButton(
             //   onPressed: watch_later.totalAmount <= 0

@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../models/http_exception.dart';
-import '../shared/dialog_utils.dart';
+// import '../shared/dialog_utils.dart';
 
 import 'auth_manager.dart';
-import 'app_banner.dart';
+// import 'app_banner.dart';
 
 enum AuthMode { signup, login }
 
@@ -126,8 +126,7 @@ class _AuthCardState extends State<AuthCard> {
           color: Theme.of(context).primaryColor,
         ),
       ),
-      child:
-          Text('${_authMode == AuthMode.login ? 'SIGNUP' : 'LOGIN'} INSTEAD'),
+      child: Text('${_authMode == AuthMode.login ? 'REGISTER' : 'LOGIN'}'),
     );
   }
 
@@ -143,7 +142,7 @@ class _AuthCardState extends State<AuthCard> {
           color: Theme.of(context).primaryTextTheme.headline6?.color,
         ),
       ),
-      child: Text(_authMode == AuthMode.login ? 'LOGIN' : 'SIGN UP'),
+      child: Text(_authMode == AuthMode.login ? 'LOGIN' : 'REGISTER'),
     );
   }
 
