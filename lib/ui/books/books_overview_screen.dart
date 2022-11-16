@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myshop/ui/books/search.dart';
 import 'package:myshop/ui/watch_later/watch_later_screen.dart';
 
 import 'books_grid.dart';
@@ -38,6 +39,12 @@ class _BooksOverviewScreenState extends State<BooksOverviewScreen> {
       appBar: AppBar(
         title: const Text('Review Books'),
         actions: <Widget>[
+          IconButton(
+            icon: const Icon(Icons.search),
+            onPressed: () {
+              showSearch(context: context, delegate: SearchBook());
+            },
+          ),
           buildBookFilterMenu(),
           buildShoppingWatchLaterIcon(),
         ],
@@ -60,6 +67,23 @@ class _BooksOverviewScreenState extends State<BooksOverviewScreen> {
       ),
     );
   }
+
+  // @override
+  // Widget buildSearch(BuildContext context) {
+  //   return Scaffold(
+  //     appBar
+  //   )
+  // }
+  // @override
+  // List<Widget> buildActions(BuildContext context) {
+  //   return [
+  //     IconButton(
+  //         icon: const Icon(Icons.clear),
+  //         onPressed: () {
+  //           query = '';
+  //         })
+  //   ];
+  // }
 
   Widget buildShoppingWatchLaterIcon() {
     return Consumer<WatchLaterManager>(
@@ -104,3 +128,63 @@ class _BooksOverviewScreenState extends State<BooksOverviewScreen> {
     );
   }
 }
+
+// class CustomSearch extends SearchDelegate {
+//   List<String> allData = ['American', 'Russia', 'China'];
+//   @override
+//   List<Widget> buildActions(BuildContext context) {
+//     return [
+//       IconButton(
+//         icon: const Icon(Icons.clear),
+//         onPressed: () {
+//           query = '';
+//         },
+//       )
+//     ];
+//   }
+
+//   @override
+//   Widget buildLeading(BuildContext context) {
+//     return IconButton(
+//         icon: const Icon(Icons.arrow_back),
+//         onPressed: () {
+//           close(context, null);
+//         });
+//   }
+
+//   @override
+//   List buildSuggestions(BuildContext context) {
+//     List<String> matchQuery = [];
+//     for (var item in allData) {
+//       if (item.toLowerCase().contains(query.toLowerCase())) {
+//         matchQuery.add(item);
+//       }
+//     }
+//     return ListView.buildSearch(
+//         itemCount: matchQuery.length,
+//         itemBuilder: (context, index) {
+//           var result = matchQuery[index];
+//           returnListTile(
+//             title: Text(result),
+//           );
+//         });
+//   }
+
+//   @override
+//   List buildResults(BuildContext context) {
+//     List<String> matchQuery = [];
+//     for (var item in allData) {
+//       if (item.toLowerCase().contains(query.toLowerCase())) {
+//         matchQuery.add(item);
+//       }
+//     }
+//     return ListView.builderSearch(
+//         itemCount: matchQuery.length,
+//         itemBuilder: (context, index) {
+//           var result = matchQuery[index];
+//           returnListTile(
+//             title: Text(result),
+//           );
+//         });
+//   }
+// }
