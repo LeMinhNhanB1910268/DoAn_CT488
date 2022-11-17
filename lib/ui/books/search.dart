@@ -53,8 +53,8 @@ class SearchBook extends SearchDelegate {
       itemCount: matchQuery.length,
       itemBuilder: (ctx, i) => BookGridTile(matchQuery[i]),
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 1,
-        childAspectRatio: 3 / 2,
+        crossAxisCount: 2,
+        childAspectRatio: 3 / 4,
         crossAxisSpacing: 10,
         mainAxisSpacing: 10,
       ),
@@ -76,8 +76,8 @@ class SearchBook extends SearchDelegate {
       itemCount: matchQuery.length,
       itemBuilder: (ctx, i) => BookGridTile(matchQuery[i]),
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 1,
-        childAspectRatio: 3 / 2,
+        crossAxisCount: 2,
+        childAspectRatio: 3 / 4,
         crossAxisSpacing: 10,
         mainAxisSpacing: 10,
       ),

@@ -36,6 +36,14 @@ class BookDetailScreen extends StatelessWidget {
                 fontSize: 20,
               ),
             ),
+            Text(
+              '${book.title}',
+              textAlign: TextAlign.center,
+              style: const TextStyle(
+                color: Colors.green,
+                fontSize: 20,
+              ),
+            ),
             const SizedBox(
               height: 10,
             ),

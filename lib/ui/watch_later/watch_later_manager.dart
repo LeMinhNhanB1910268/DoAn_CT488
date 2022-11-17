@@ -1,15 +1,12 @@
 import 'package:myshop/models/book.dart';
 import '../../models/watch_later_item.dart';
-// import '../../models/book.dart';
 import 'package:flutter/foundation.dart';
-// import 'package:provider/provider.dart';
 
 class WatchLaterManager with ChangeNotifier {
   Map<String, WatchLaterItem> _items = {};
 
   int get bookCount {
     return _items.length;
-    // return 3;
   }
 
   List<WatchLaterItem> get books {
@@ -19,14 +16,6 @@ class WatchLaterManager with ChangeNotifier {
   Iterable<MapEntry<String, WatchLaterItem>> get bookEntries {
     return {..._items}.entries;
   }
-
-  // double get totalAmount {
-  //   var total = 0.0;
-  //   _items.forEach((key, WatchLaterItem) {
-  //     total += cartItem.imageUrl * cartItem.volumnCount;
-  //   });
-  //   return total;
-  // }
 
   void addItem(Book book) {
     if (_items.containsKey(book.id)) {

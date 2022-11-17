@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 
 import '../../models/watch_later_item.dart';
+import '../books/book_detail_screen.dart';
 import '../shared/dialog_utils.dart';
 
-// import '../../models/book.dart';
-// import 'package:flutter/foundation.dart';
 import 'package:provider/provider.dart';
 import '../../ui/watch_later/watch_later_manager.dart';
 
@@ -46,11 +45,11 @@ class WatchLaterItemCard extends StatelessWidget {
       onDismissed: (direction) {
         context.read<WatchLaterManager>().removeItem(bookId);
       },
-      child: buildItemCard(),
+      child: buildItemCard(context),
     );
   }
 
-  Widget buildItemCard() {
+  Widget buildItemCard(BuildContext context) {
     return Card(
       margin: const EdgeInsets.symmetric(
         horizontal: 15,
@@ -59,23 +58,16 @@ class WatchLaterItemCard extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(8),
         child: ListTile(
-          // leading: CircleAvatar(
-          //   child: Padding(
-          //     padding: const EdgeInsets.all(5),
-          //     child: FittedBox(
-          //       child: Image.network(
-          //         cardItem.imageUrl,
-          //         fit: BoxFit.cover,
-          //       ),
-          //     ),
-          //   ),
-          // ),
+          onTap: () {
+            Navigator.of(context).pushNamed(
+              BookDetailScreen.routeName,
+              arguments: bookId,
+            );
+          },
           leading: Image(
             image: NetworkImage(cardItem.imageUrl),
           ),
           title: Text(cardItem.title),
-          // subtitle: Text('Total: \$${(cardItem.price * cardItem.)}'),
-          // trailing: Text('${cardItem.} x'),
         ),
       ),
     );

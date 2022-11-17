@@ -3,10 +3,7 @@ import 'package:flutter/material.dart';
 import 'watch_later_manager.dart';
 import 'item_card.dart';
 
-// import '../../models/book.dart';
-// import 'package:flutter/foundation.dart';
 import 'package:provider/provider.dart';
-// import '../../ui/watch_later/watch_later_manager.dart';
 
 class WatchLaterScreen extends StatelessWidget {
   static const routeName = '/watch_later';
@@ -66,21 +63,6 @@ class WatchLaterScreen extends StatelessWidget {
               ),
               backgroundColor: Theme.of(context).canvasColor,
             ),
-            // TextButton(
-            //   onPressed: watch_later.totalAmount <= 0
-            //       ? null
-            //       : () {
-            //           context.read<OrdersManager>().addOrder(
-            //                 watch_later.books,
-            //                 watch_later.totalAmount,
-            //               );
-            //           watch_later.clear();
-            //         },
-            //   style: TextButton.styleFrom(
-            //     textStyle: TextStyle(color: Theme.of(context).primaryColor),
-            //   ),
-            //   child: const Text('ORDER NOW'),
-            // ),
           ],
         ),
       ),
