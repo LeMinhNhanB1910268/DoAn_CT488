@@ -6,8 +6,6 @@ import 'books_grid.dart';
 import '../shared/app_drawer.dart';
 import 'top_right_badge.dart';
 
-// import '../../models/book.dart';
-// import 'package:flutter/foundation.dart';
 import 'package:provider/provider.dart';
 import '../watch_later/watch_later_manager.dart';
 import '../books/books_manager.dart';
@@ -68,23 +66,6 @@ class _BooksOverviewScreenState extends State<BooksOverviewScreen> {
     );
   }
 
-  // @override
-  // Widget buildSearch(BuildContext context) {
-  //   return Scaffold(
-  //     appBar
-  //   )
-  // }
-  // @override
-  // List<Widget> buildActions(BuildContext context) {
-  //   return [
-  //     IconButton(
-  //         icon: const Icon(Icons.clear),
-  //         onPressed: () {
-  //           query = '';
-  //         })
-  //   ];
-  // }
-
   Widget buildShoppingWatchLaterIcon() {
     return Consumer<WatchLaterManager>(
       builder: (ctx, watchLaterManager, child) {
@@ -128,63 +109,3 @@ class _BooksOverviewScreenState extends State<BooksOverviewScreen> {
     );
   }
 }
-
-// class CustomSearch extends SearchDelegate {
-//   List<String> allData = ['American', 'Russia', 'China'];
-//   @override
-//   List<Widget> buildActions(BuildContext context) {
-//     return [
-//       IconButton(
-//         icon: const Icon(Icons.clear),
-//         onPressed: () {
-//           query = '';
-//         },
-//       )
-//     ];
-//   }
-
-//   @override
-//   Widget buildLeading(BuildContext context) {
-//     return IconButton(
-//         icon: const Icon(Icons.arrow_back),
-//         onPressed: () {
-//           close(context, null);
-//         });
-//   }
-
-//   @override
-//   List buildSuggestions(BuildContext context) {
-//     List<String> matchQuery = [];
-//     for (var item in allData) {
-//       if (item.toLowerCase().contains(query.toLowerCase())) {
-//         matchQuery.add(item);
-//       }
-//     }
-//     return ListView.buildSearch(
-//         itemCount: matchQuery.length,
-//         itemBuilder: (context, index) {
-//           var result = matchQuery[index];
-//           returnListTile(
-//             title: Text(result),
-//           );
-//         });
-//   }
-
-//   @override
-//   List buildResults(BuildContext context) {
-//     List<String> matchQuery = [];
-//     for (var item in allData) {
-//       if (item.toLowerCase().contains(query.toLowerCase())) {
-//         matchQuery.add(item);
-//       }
-//     }
-//     return ListView.builderSearch(
-//         itemCount: matchQuery.length,
-//         itemBuilder: (context, index) {
-//           var result = matchQuery[index];
-//           returnListTile(
-//             title: Text(result),
-//           );
-//         });
-//   }
-// }

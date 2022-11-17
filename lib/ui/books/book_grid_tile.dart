@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import '../../models/book.dart';
 import 'book_detail_screen.dart';
 
-// import '../../models/book.dart';
-// import 'package:flutter/foundation.dart';
 import 'package:provider/provider.dart';
 import '../watch_later/watch_later_manager.dart';
 import '../books/books_manager.dart';
@@ -50,7 +48,6 @@ class BookGridTile extends StatelessWidget {
             ),
             color: Theme.of(context).colorScheme.secondary,
             onPressed: () {
-              // book.isFavorite = !isFavorite;
               ctx.read<BooksManager>().toggleFavoriteStatus(book);
             },
           );
@@ -83,7 +80,6 @@ class BookGridTile extends StatelessWidget {
                 ),
               ),
             );
-          // print('Add item to cart');
         },
         color: Theme.of(context).colorScheme.secondary,
       ),

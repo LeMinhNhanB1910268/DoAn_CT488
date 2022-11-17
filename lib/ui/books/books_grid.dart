@@ -2,9 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:myshop/ui/books/books_manager.dart';
 import 'package:myshop/models/book.dart';
 import 'book_grid_tile.dart';
-// import 'books_manager.dart';
-// import '../../models/book.dart';
-// import 'package:flutter/foundation.dart';
 import 'package:provider/provider.dart';
 
 class BooksGrid extends StatelessWidget {
@@ -16,8 +13,6 @@ class BooksGrid extends StatelessWidget {
   Widget build(BuildContext context) {
     // Doc ra danh sach cac Book se duoc hien thi tu BooksManager
     final booksManager = BooksManager();
-    // final books =
-    //     showFavorites ? booksManager.favoriteItems : booksManager.items;
     final books = context.select<BooksManager, List<Book>>((booksManager) =>
         showFavorites ? booksManager.favoriteItems : booksManager.items);
     return GridView.builder(
@@ -25,8 +20,8 @@ class BooksGrid extends StatelessWidget {
       itemCount: books.length,
       itemBuilder: (ctx, i) => BookGridTile(books[i]),
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 2,
-        childAspectRatio: 3 / 4,
+        crossAxisCount: 1,
+        childAspectRatio: 3 / 2,
         crossAxisSpacing: 10,
         mainAxisSpacing: 10,
       ),

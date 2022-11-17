@@ -44,7 +44,7 @@ class SearchBook extends SearchDelegate {
   Widget buildResults(BuildContext context) {
     List<Book> matchQuery = [];
     for (var fruit in searchTerms) {
-      if (fruit.title.toLowerCase().contains(query.toLowerCase())) {
+      if ((fruit.title.toLowerCase().contains(query.toLowerCase())) || (fruit.genres.toLowerCase().contains(query.toLowerCase())) || (fruit.author.toLowerCase().contains(query.toLowerCase()))) {
         matchQuery.add(fruit);
       }
     }
@@ -67,7 +67,7 @@ class SearchBook extends SearchDelegate {
   Widget buildSuggestions(BuildContext context) {
     List<Book> matchQuery = [];
     for (var fruit in searchTerms) {
-      if (fruit.title.toLowerCase().contains(query.toLowerCase())) {
+      if ((fruit.title.toLowerCase().contains(query.toLowerCase())) || (fruit.genres.toLowerCase().contains(query.toLowerCase())) || (fruit.author.toLowerCase().contains(query.toLowerCase()))) {
         matchQuery.add(fruit);
       }
     }
