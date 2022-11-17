@@ -25,8 +25,8 @@ class BooksGrid extends StatelessWidget {
       itemCount: books.length,
       itemBuilder: (ctx, i) => BookGridTile(books[i]),
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 1,
-        childAspectRatio: 3 / 2,
+        crossAxisCount: 2,
+        childAspectRatio: 3 / 4,
         crossAxisSpacing: 10,
         mainAxisSpacing: 10,
       ),
