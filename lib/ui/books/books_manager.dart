@@ -11,6 +11,8 @@ class BooksManager with ChangeNotifier {
   BooksManager([AuthToken? authToken])
       : _booksService = BooksService(authToken);
 
+  get book => null;
+
   set authToken(AuthToken? authToken) {
     _booksService.authToken = authToken;
   }

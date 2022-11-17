@@ -72,7 +72,7 @@ class BookGridTile extends StatelessWidget {
             ..showSnackBar(
               SnackBar(
                 content: const Text(
-                  'Item added to list',
+                  'Item added to watch later list',
                 ),
                 duration: const Duration(seconds: 2),
                 action: SnackBarAction(

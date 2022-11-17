@@ -1,10 +1,13 @@
-import 'package:flutter/material.dart';
-import '../books/books_overview_screen.dart';
-import '../../services/API_services.dart';
 import '../../models/book.dart';
-import 'books_grid.dart';
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'book_grid_tile.dart';
+import 'books_manager.dart';
 
 class SearchBook extends SearchDelegate {
+  List<Book> searchTerms = [];
+  @override
+  // Future<void> gettitle(BuildContext context) async {}
   @override
   List<Widget>? buildActions(BuildContext context) {
     return [
@@ -13,44 +16,71 @@ class SearchBook extends SearchDelegate {
         onPressed: () {
           query = '';
         },
-      )
+      ),
     ];
   }
 
+  // second overwrite to pop out of search menu
   @override
   Widget? buildLeading(BuildContext context) {
+    final book = context
+        .select<BooksManager, List<Book>>((booksManager) => booksManager.items);
+    List<Book> books = [];
+    // int a = booksManager.bookCount
+    for (int i = 0; i < book.length; i++) {
+      books += [book[i]];
+    }
+    searchTerms = books;
     return IconButton(
-        icon: Icon(Icons.arrow_back),
-        onPressed: () {
-          Navigator.pop(context);
-        });
-  }
-
-  FetchBook _bookList = FetchBook();
-  final _showOnlyFavorites = ValueNotifier<bool>(false);
-  @override
-  Widget buildResults(BuildContext context) {
-    return FutureBuilder(
-      future: _bookList.getBookList(query: query),
-      builder: (context, snapshot) {
-        if (snapshot.connectionState == ConnectionState.done) {
-          return ValueListenableBuilder<bool>(
-              valueListenable: _showOnlyFavorites,
-              builder: (context, onlyFavorites, child) {
-                return BooksGrid(onlyFavorites);
-              });
-        }
-        return const Center(
-          child: CircularProgressIndicator(),
-        );
+      icon: const Icon(Icons.arrow_back),
+      onPressed: () {
+        close(context, null);
       },
     );
   }
 
+  // third overwrite to show query result
+  @override
+  Widget buildResults(BuildContext context) {
+    List<Book> matchQuery = [];
+    for (var fruit in searchTerms) {
+      if (fruit.title.toLowerCase().contains(query.toLowerCase())) {
+        matchQuery.add(fruit);
+      }
+    }
+    return GridView.builder(
+      padding: const EdgeInsets.all(10.0),
+      itemCount: matchQuery.length,
+      itemBuilder: (ctx, i) => BookGridTile(matchQuery[i]),
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 1,
+        childAspectRatio: 3 / 2,
+        crossAxisSpacing: 10,
+        mainAxisSpacing: 10,
+      ),
+    );
+  }
+
+  // last overwrite to show the
+  // querying process at the runtime
   @override
   Widget buildSuggestions(BuildContext context) {
-    return Center(
-      child: Text("Search Books"),
+    List<Book> matchQuery = [];
+    for (var fruit in searchTerms) {
+      if (fruit.title.toLowerCase().contains(query.toLowerCase())) {
+        matchQuery.add(fruit);
+      }
+    }
+    return GridView.builder(
+      padding: const EdgeInsets.all(10.0),
+      itemCount: matchQuery.length,
+      itemBuilder: (ctx, i) => BookGridTile(matchQuery[i]),
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 1,
+        childAspectRatio: 3 / 2,
+        crossAxisSpacing: 10,
+        mainAxisSpacing: 10,
+      ),
     );
   }
 }
