@@ -43,9 +43,11 @@ class SearchBook extends SearchDelegate {
   @override
   Widget buildResults(BuildContext context) {
     List<Book> matchQuery = [];
-    for (var fruit in searchTerms) {
-      if ((fruit.title.toLowerCase().contains(query.toLowerCase())) || (fruit.genres.toLowerCase().contains(query.toLowerCase())) || (fruit.author.toLowerCase().contains(query.toLowerCase()))) {
-        matchQuery.add(fruit);
+    for (var result in searchTerms) {
+      if ((result.title.toLowerCase().contains(query.toLowerCase())) ||
+          (result.genres.toLowerCase().contains(query.toLowerCase())) ||
+          (result.author.toLowerCase().contains(query.toLowerCase()))) {
+        matchQuery.add(result);
       }
     }
     return GridView.builder(
@@ -66,9 +68,11 @@ class SearchBook extends SearchDelegate {
   @override
   Widget buildSuggestions(BuildContext context) {
     List<Book> matchQuery = [];
-    for (var fruit in searchTerms) {
-      if ((fruit.title.toLowerCase().contains(query.toLowerCase())) || (fruit.genres.toLowerCase().contains(query.toLowerCase())) || (fruit.author.toLowerCase().contains(query.toLowerCase()))) {
-        matchQuery.add(fruit);
+    for (var result in searchTerms) {
+      if ((result.title.toLowerCase().contains(query.toLowerCase())) ||
+          (result.genres.toLowerCase().contains(query.toLowerCase())) ||
+          (result.author.toLowerCase().contains(query.toLowerCase()))) {
+        matchQuery.add(result);
       }
     }
     return GridView.builder(

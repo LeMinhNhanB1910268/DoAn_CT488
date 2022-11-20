@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:myshop/ui/books/books_manager.dart';
+import 'package:reviewbooks/ui/books/books_manager.dart';
 
 import '../../models/book.dart';
 // import 'package:flutter/foundation.dart';

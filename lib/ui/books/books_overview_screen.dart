@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:myshop/ui/books/search.dart';
-import 'package:myshop/ui/watch_later/watch_later_screen.dart';
+import 'package:reviewbooks/ui/books/search.dart';
+import 'package:reviewbooks/ui/watch_later/watch_later_screen.dart';
 
 import 'books_grid.dart';
 import '../shared/app_drawer.dart';

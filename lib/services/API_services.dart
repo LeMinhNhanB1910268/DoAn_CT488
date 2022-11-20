@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
-import 'package:myshop/models/book.dart';
+import 'package:reviewbooks/models/book.dart';
 
 class FetchBook {
   var data = [];

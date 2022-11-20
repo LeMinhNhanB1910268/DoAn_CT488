@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:myshop/ui/books/books_manager.dart';
-import 'package:myshop/models/book.dart';
+import 'package:reviewbooks/ui/books/books_manager.dart';
+import 'package:reviewbooks/models/book.dart';
 import 'book_grid_tile.dart';
 import 'package:provider/provider.dart';
 

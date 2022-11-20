@@ -1,4 +1,4 @@
-import 'package:myshop/models/book.dart';
+import 'package:reviewbooks/models/book.dart';
 import '../../models/watch_later_item.dart';
 import 'package:flutter/foundation.dart';
 
