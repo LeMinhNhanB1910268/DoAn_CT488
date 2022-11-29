@@ -32,9 +32,6 @@ class MyApp extends StatelessWidget {
           create: (ctx) => WatchLaterManager(),
         ),
         // ChangeNotifierProvider(
-        //   create: (ctx) => OrdersManager(),
-        // ),
-        // ChangeNotifierProvider(
         //   create: (ctx) => booksManager(),
         // ),
         ChangeNotifierProxyProvider<AuthManager, BooksManager>(
@@ -72,7 +69,6 @@ class MyApp extends StatelessWidget {
                   ),
             routes: {
               WatchLaterScreen.routeName: (ctx) => const WatchLaterScreen(),
-              // OrdersScreen.routeName: (ctx) => const OrdersScreen(),
               UserBooksScreen.routeName: (ctx) => const UserBooksScreen(),
             },
             onGenerateRoute: (settings) {
